@@ -57,6 +57,9 @@ public class DailyHoursStrategyTest extends TestCase {
 
         presence = createEntryAndAppend(8, 30, 13, 30);
         assertEquals((float) 0.5, strategy.calculatePaidHours(presence));
+
+        presence = createEntryAndAppend(8, 0, 13, 45);
+        assertEquals((float) 1, strategy.calculatePaidHours(presence));
     }
 
     public void testHasPaidHours() throws Exception {

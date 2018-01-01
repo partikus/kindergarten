@@ -31,4 +31,14 @@ public class DailyPresenceTest extends TestCase {
         dp.comeOut(LocalTime.of(14, 30));
         assertEquals("14:30", dp.getComeOut().toString());
     }
+
+    public void testItShouldParseTextConstructor() throws Exception {
+        DailyPresence presence = DailyPresence.from("2018-01-01", "08:00", "13:00");
+
+        assertEquals(2018, presence.getDate().getYear());
+        assertEquals(1, presence.getDate().getMonthValue());
+        assertEquals(1, presence.getDate().getDayOfMonth());
+        assertEquals("08:00", presence.getComeIn().toString());
+        assertEquals("13:00", presence.getComeOut().toString());
+    }
 }
