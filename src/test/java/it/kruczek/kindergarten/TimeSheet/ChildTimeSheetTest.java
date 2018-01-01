@@ -30,4 +30,16 @@ public class ChildTimeSheetTest extends TestCase {
     public void testItShouldReturnPresenceByDate() throws Exception {
         assertNotNull(childTimeSheet.getBy(presentLocalDate));
     }
+
+
+    public void testItShouldReturnPresenceByDateRange() throws Exception {
+        DailyPresence presence = new DailyPresence(
+                absentLocalDate,
+                LocalTime.of(8, 0),
+                LocalTime.of(14, 0)
+        );
+
+        childTimeSheet.add(presence);
+        assertEquals(2, childTimeSheet.getBy(presentLocalDate, absentLocalDate).size());
+    }
 }
