@@ -27,4 +27,8 @@ public class ChildTest extends TestCase {
         assertEquals(JakubBurczybak.postalCode, this.child.getAddress().getPostalCode());
         assertEquals(JakubBurczybak.street, this.child.getAddress().getStreet());
     }
+
+    public void testItShouldCastUserToString() throws Exception {
+        assertEquals(JakubBurczybak.firstName + " " + JakubBurczybak.lastName, this.child.toString());
+    }
 }

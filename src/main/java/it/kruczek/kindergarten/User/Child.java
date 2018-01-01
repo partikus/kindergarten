@@ -11,6 +11,11 @@ public class Child {
         this.address = address;
     }
 
+    @Override
+    public String toString() {
+        return firstName + " " + lastName;
+    }
+
     public String firstName() {
         return this.firstName;
     }
