@@ -2,7 +2,6 @@ package it.kruczek.kindergarten.TimeSheet;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class ChildTimeSheet extends ArrayList<DailyPresence> {
@@ -12,6 +11,12 @@ public class ChildTimeSheet extends ArrayList<DailyPresence> {
 
     public DailyPresence getBy(LocalDate presentLocalDate) {
         return this.stream().filter(p -> p.getDate().equals(presentLocalDate)).findFirst().get();
+    }
+
+    public ArrayList<DailyPresence> getByMonth(LocalDate monthDate) {
+        return this.stream()
+                .filter(p -> p.getDate().getMonthValue() == monthDate.getMonthValue())
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     public ArrayList<DailyPresence> getBy(LocalDate from, LocalDate to) {
