@@ -1,9 +1,9 @@
 package it.kruczek.kindergarten.User;
 
 public class Child {
-    private final String firstName;
-    private final String lastName;
-    private final Address address;
+    private String firstName;
+    private String lastName;
+    private Address address;
 
     public Child(String firstName, String lastName, Address address) {
         this.firstName = firstName;
@@ -16,11 +16,11 @@ public class Child {
         return firstName + " " + lastName;
     }
 
-    public String firstName() {
+    public String getFirstName() {
         return this.firstName;
     }
 
-    public String lastName() {
+    public String getLastName() {
         return this.lastName;
     }
 

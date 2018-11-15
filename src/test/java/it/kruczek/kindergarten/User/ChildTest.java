@@ -21,8 +21,8 @@ public class ChildTest extends TestCase {
     }
 
     public void testItShouldHasPersonalDetails() throws Exception {
-        assertEquals(JakubBurczybak.firstName, this.child.firstName());
-        assertEquals(JakubBurczybak.lastName, this.child.lastName());
+        assertEquals(JakubBurczybak.firstName, this.child.getFirstName());
+        assertEquals(JakubBurczybak.lastName, this.child.getLastName());
         assertEquals(JakubBurczybak.city, this.child.getAddress().getCity());
         assertEquals(JakubBurczybak.postalCode, this.child.getAddress().getPostalCode());
         assertEquals(JakubBurczybak.street, this.child.getAddress().getStreet());

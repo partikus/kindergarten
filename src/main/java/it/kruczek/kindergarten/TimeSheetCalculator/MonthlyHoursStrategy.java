@@ -21,7 +21,7 @@ public class MonthlyHoursStrategy {
 
         float hours = 0;
         for (DailyPresence presence : presences) {
-            hours += dailyHoursStrategy.calculate(presence);
+            hours += Math.round(dailyHoursStrategy.calculate(presence) * 10 * 4)/ (10 * 4);
         }
 
         return hours;
